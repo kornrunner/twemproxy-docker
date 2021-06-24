@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 RUN apt-get update && apt-get install -y libtool autoconf make git
 
 WORKDIR /root
-RUN git clone https://github.com/twitter/twemproxy.git
+RUN git clone https://github.com/kornrunner/twemproxy.git
 
 WORKDIR /root/twemproxy
 RUN autoreconf -fvi && ./configure && make && make install && strip /usr/local/sbin/nutcracker
